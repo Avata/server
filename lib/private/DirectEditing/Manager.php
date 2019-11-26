@@ -71,8 +71,6 @@ class Manager implements IManager {
 		$this->connection = $connection;
 		$this->userId = $userSession->getUser() ? $userSession->getUser()->getUID() : null;
 		$this->rootFolder = $rootFolder;
-		$eventDispatcher->dispatchTyped(new RegisterDirectEditorEvent($this));
-
 	}
 
 	public function registerDirectEditor(IEditor $directEditor): void {
